@@ -6,6 +6,7 @@ body, html {
   margin: 0;
   padding: 0;
   font-size: 1rem;
+  font-family: monospace;
 }
 
 ul {
@@ -30,6 +31,7 @@ ul {
   position: fixed;
   bottom: 0;
   width: 100%;
+  padding: 0.25rem;
 }
 
 .footer-list {
@@ -63,4 +65,26 @@ ul {
 
 .bundle__arrow {
   float: right;
+}
+
+.add-header {
+  padding-left: 1rem;
+}
+
+.add-choices {
+  list-style: none;
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+}
+
+.add-choice {
+  
+}
+
+.bundle-list.has-top > .bundle:first {
+  border-top: 0.1rem dotted #000;
+}
+
+.bundle-list.is-indented > .bundle {
+  padding-left: 2rem;
 }

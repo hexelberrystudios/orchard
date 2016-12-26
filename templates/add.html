@@ -1,21 +1,37 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>Time to make a new...</h1>
+<h1 class="add-header">Time to make a new...</h1>
+<ul class="bundle-list has-top is-indented">
+  <li class="bundle">
+    <a href="#">Item</a>
+    <span class="bundle__arrow">&#8674;</span>
+  </li>
+  <li class="bundle">
+    <a href="#">Template</a>
+    <span class="bundle__arrow">&#8674;</span>
+  </li>
+  <li class="bundle">
+    <a href="#">Bundle</a>
+    <span class="bundle__arrow">&#8674;</span>
+  </li>
+</ul>
+<!--
 <form method="post">
-  <ul>
-    <li>
+  <ul class="add-choices">
+    <li class="add-choice">
       <input id="choice_1" type="radio" name="choice" value="item" />
       <label for="choice_1">Item</label>
     </li>
-    <li>
+    <li class="add-choice">
       <input id="choice_2" type="radio" name="choice" value="template" />
       <label for="choice_2">Template</label>
     </li>
-    <li>
+    <li class="add-choice">
       <input id="choice_3" type="radio" name="choice" value="bundle" />
       <label for="choice_3">Bundle</label>
     </li>
   </ul>
   <button type="submit" class="button">Next</button>
 </form>
+-->
 {% endblock %}
