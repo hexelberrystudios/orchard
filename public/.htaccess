@@ -13,7 +13,7 @@
 # absolute physical path to the directory that contains this htaccess file.
 #
 # RewriteBase /
-RewriteBase /~marth/orchard/public/
+#RewriteBase /~marth/orchard/public/
 
 # If the following conditions are true, then rewrite the URL:
 # If the requested filename is not a directory,
