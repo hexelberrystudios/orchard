@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Time to make a new...</h1>
+<form method="post">
+  <ul>
+    <li>
+      <input id="choice_1" type="radio" name="choice" value="item" />
+      <label for="choice_1">Item</label>
+    </li>
+    <li>
+      <input id="choice_2" type="radio" name="choice" value="template" />
+      <label for="choice_2">Template</label>
+    </li>
+    <li>
+      <input id="choice_3" type="radio" name="choice" value="bundle" />
+      <label for="choice_3">Bundle</label>
+    </li>
+  </ul>
+  <button type="submit" class="button">Next</button>
+</form>
+{% endblock %}

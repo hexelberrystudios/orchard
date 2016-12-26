@@ -1,0 +1,66 @@
+:root {
+  --primary-color: #70285f;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: var(--primary-color);
+  color: #fff;
+  text-align: center;
+  padding: 0.25rem;
+}
+
+.header__title {
+  
+}
+
+.footer {
+  background-color: var(--primary-color);
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-list {
+  list-style: none;
+}
+
+.footer-list__action {
+  display: inline-block;
+  width: 32%;
+  text-align: center;
+}
+
+.footer-list__action > a {
+  color: #fff;
+}
+
+.bundle-list {
+  list-style: none;
+}
+
+.bundle {
+  font-size: 1.25rem;
+  padding: 1rem 0.25rem;
+  background-color: #fbf8fa;
+  border-bottom: 0.1rem dotted #000;
+}
+
+.bundle > a {
+  color: #4b255e;
+}
+
+.bundle__arrow {
+  float: right;
+}
