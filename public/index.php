@@ -124,10 +124,11 @@ $app->post(
         
         while (isset($_POST['field_label_'.$numFields])) {
             $fields[] = array('label' => $_POST['field_label_'.$numFields],
-                              'type' => $_POST['field_type_'.$numFields]);
+                              'type' => $_POST['field_type_'.$numFields],
+                              'id' => $_POST['field_'.$numFields]);
         }
         
-        $app->render('new-item.html', array('defaultTemplate' => $_POST['name'],
+        $app->render('new-item.html', array('templateName' => $_POST['template_name'],
                                             'fields' => $fields));
     }
 );

@@ -2,10 +2,14 @@
 {% block content %}
 <h1 class="add-header">Alright! Time to add a new {{ templateName }}.</h1>
 <form method="post" id="new-item-form" name="new-item" action="public/">
-  <div id="item-name" class="form-group">
-    <label for="name" class="d-block">Name</label>
-    <input type="text" id="name" />
-  </div>
+  {% for field in fields %}
+    <div id="item-name" class="form-group">
+      <label for="{{ field.id }}" class="d-block">{{ field.label }}</label>
+      {% if field.type == 'text' %}
+        <input id="{{ field.id }}" type="text" />
+      {% endif %}
+    </div>
+  {% endfor %}
   <div class="form-group is-submit">
     <button type="submit" class="action-btn">Done! Let's move on.</button>
   </div>

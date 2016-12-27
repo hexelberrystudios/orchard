@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
 <h1 class="add-header t-center">What can we help set up for you?</h1>
-<form method="post" id="new-item-form" name="new-item" action="public/new-item">
+<form method="post" id="new-item-form" name="new-item" action="/public/new-item">
   <div id="item-name" class="form-group t-center">
-    <select name="form-type" class="form-select">
-      <option value="recipe">Recipe</option>
-      <option value="contact">Contact</option>
+    <select name="template_name" class="form-select">
+      <option value="Recipe">Recipe</option>
+      <option value="Contact">Contact</option>
     </select>
   </div>
   <div class="form-group is-submit">

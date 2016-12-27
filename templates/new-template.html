@@ -4,7 +4,7 @@
 <form method="post" id="new-template-form" name="new-template" action="public/new-item">
   <div id="template-name" class="form-group">
     <label for="name" class="d-block">Name</label>
-    <input type="text" id="name" />
+    <input type="text" id="name" name="template_name" />
   </div>
 	<div id="field-form-template" class="field-form d-none">
     <div class="form-group">
@@ -74,6 +74,6 @@
       // insert field form between template name and submit button
       pageForm.insertBefore(newForm, templateNameFieldGroup.nextSibling);
     }
-  });
+  })();
 </script>
 {% endblock %}
