@@ -132,3 +132,12 @@ ul {
   border-radius: 0.3rem;
   font-size: 1rem;
 }
+
+.t-center {
+  text-align: center;
+}
+
+.form-select {
+  font-size: 1rem;
+  min-width: 15%;
+}

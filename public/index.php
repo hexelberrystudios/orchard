@@ -132,6 +132,20 @@ $app->post(
     }
 );
 
+$app->get(
+    '/new-item',
+    function () use ($app) {
+        $app->render('new-item.html');
+    }
+);
+
+$app->get(
+    '/choose-item',
+    function () use ($app) {
+        $app->render('choose-item.html');
+    }
+);
+
 /**
  * Step 4: Run the Slim application
  *
