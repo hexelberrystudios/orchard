@@ -107,6 +107,31 @@ $app->get(
     }
 );
 
+$app->get(
+    '/new-template',
+    function () use ($app) {
+        $app->render('new-template.html');
+    }
+);
+
+$app->post(
+    '/new-item',
+    function () use ($app) {
+        // @TODO: show submitted template name
+        // @TODO: show submitted list of fields
+        $numFields = 1;
+        $fields = array();
+        
+        while (isset($_POST['field_label_'.$numFields])) {
+            $fields[] = array('label' => $_POST['field_label_'.$numFields],
+                              'type' => $_POST['field_type_'.$numFields]);
+        }
+        
+        $app->render('new-item.html', array('defaultTemplate' => $_POST['name'],
+                                            'fields' => $fields));
+    }
+);
+
 /**
  * Step 4: Run the Slim application
  *

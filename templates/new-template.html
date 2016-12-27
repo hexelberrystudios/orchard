@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="add-header">Time to make a new template!</h1>
+<form method="post" id="new-template-form" name="new-template" action="public/new-item">
+  <div id="template-name" class="form-group">
+    <label for="name" class="d-block">Name</label>
+    <input type="text" id="name" />
+  </div>
+	<div id="field-form-template" class="field-form d-none">
+    <div class="form-group">
+      <label for="field_label_0" class="d-block">Field Label</label>
+      <input type="text" id="field_label_0" name="field_label_0">
+    </div>
+    <div class="form-group">
+      <label for="field_type_0" class="d-block">Field Type</label>
+      <select id="field_type_0" name="field_type_0">
+        <option value="text">Text</option>
+        <option value="date">Date</option>
+        <option value="link">Link</option>
+        <option value="textArea">Text Area</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <button type="button" class="round-btn add-btn-js">
+        <!-- ligatures automatically convert text to icon -->
+        <span class="material-icons">add circle outline</span>
+      </button>
+      <button type="button" class="round-btn remove-btn-js d-none">
+        <!-- ligatures automatically convert text to icon -->
+        <span class="material-icons">remove circle outline</span>
+      </button>
+    </div>
+  </div>
+  <div class="form-group is-submit">
+    <button type="submit" class="action-btn">Done! Let's move on.</button>
+  </div>
+</form>
+<script type="text/javascript">
+  (function () {
+    var numFields = 0;
+    
+    document.addEventListener('DOMContentLoaded', function (e) {
+      addAnotherFieldForm();
+    });
+    
+    function addAnotherFieldForm () {
+      var addFieldForm = document.getElementById('field-form-template');
+      var pageForm = document.getElementById('new-template-form');
+      var templateNameFieldGroup = document.getElementById('template-name');
+      var newForm,
+          addFieldBtn,
+          removeFieldBtn;
+      
+      numFields++;
+      newForm = addFieldForm.cloneNode(true);
+      newForm.setAttribute('id', '');
+      newForm.className = newForm.className.replace('d-none', '');
+      newForm.querySelector('#field_label_0').setAttribute('name', 'field_label_' + numFields);
+      newForm.querySelector('#field_type_0').setAttribute('name', 'field_type_' + numFields);
+      addFieldBtn = newForm.querySelector('.add-btn-js');
+      removeFieldBtn = newForm.querySelector('.remove-btn-js');
+      
+      // add another field; show remove button
+      addFieldBtn.addEventListener('click', function (e) {
+        addAnotherFieldForm();
+        addFieldBtn.className += ' d-none';
+        removeFieldBtn.className = removeFieldBtn.className.replace('d-none', '');
+      });
+      // remove field
+      removeFieldBtn.addEventListener('click', function (e) {
+        pageForm.removeChild(newForm);
+      });
+      
+      // insert field form between template name and submit button
+      pageForm.insertBefore(newForm, templateNameFieldGroup.nextSibling);
+    }
+  });
+</script>
+{% endblock %}

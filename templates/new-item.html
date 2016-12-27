@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="add-header">Let's get things done! Time to add a new item.</h1>
+<form method="post" id="new-item-form" name="new-item" action="public/">
+  <div id="item-name" class="form-group">
+    <label for="name" class="d-block">Name</label>
+    <input type="text" id="name" />
+  </div>
+  <div class="form-group is-submit">
+    <button type="submit" class="action-btn">Done! Let's move on.</button>
+  </div>
+</form>
+{% endblock %}

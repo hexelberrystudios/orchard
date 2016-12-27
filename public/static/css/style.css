@@ -1,5 +1,7 @@
 :root {
-  --primary-color: #70285f;
+  --darkish-color: #4b255e;
+  --med-color: #70285f;
+  --light-color: #fbf8fa;
 }
 
 body, html {
@@ -15,7 +17,7 @@ ul {
 }
 
 .header {
-  background-color: var(--primary-color);
+  background-color: var(--med-color);
   color: #fff;
   text-align: center;
   padding: 0.25rem;
@@ -26,7 +28,7 @@ ul {
 }
 
 .footer {
-  background-color: var(--primary-color);
+  background-color: var(--med-color);
   color: #fff;
   position: fixed;
   bottom: 0;
@@ -55,12 +57,12 @@ ul {
 .bundle {
   font-size: 1.25rem;
   padding: 1rem 0.25rem;
-  background-color: #fbf8fa;
+  background-color: var(--light-color);
   border-bottom: 0.1rem dotted #000;
 }
 
 .bundle > a {
-  color: #4b255e;
+  color: var(--darkish-color);
 }
 
 .bundle__arrow {
@@ -81,10 +83,52 @@ ul {
   
 }
 
-.bundle-list.has-top > .bundle:first {
-  border-top: 0.1rem dotted #000;
+.bundle-list.has-top > .bundle:first-child {
+  border-top: 0.1rem dotted var(--darkish-color);
 }
 
 .bundle-list.is-indented > .bundle {
   padding-left: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+}
+
+.d-block {
+  display: block;
+}
+
+.d-none {
+  display: none;
+}
+
+.round-btn {
+  border-radius: 50rem;
+  border: 0.2rem solid var(--med-color);
+  background-color: var(--light-color);
+  color: var(--med-color);
+}
+
+.round-btn > .material-icons {
+  width: 2rem;
+}
+
+.field-form {
+  padding: 0.5rem 0;
+  background-color: var(--light-color);
+}
+
+.form-group.is-submit {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.action-btn {
+  border: 0.15rem solid var(--med-color);
+  color: var(--darkish-color);
+  background-color: #fff;
+  border-radius: 0.3rem;
+  font-size: 1rem;
 }
