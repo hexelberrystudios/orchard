@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<ul class="bundle-list">
+{% for item in items %}
+  <li class="bundle">
+    <a href="/public/edit-item">
+      {% for field in item %}
+        {% if field.preview %}
+          {% if field.type == 'text' or field.type == 'textArea' %}
+            <span class="d-block">{{ field.value }}</span>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </a>
+  </li>
+{% endfor %}
+</ul>
+{% endblock %}

@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <h1 class="add-header">Alright! Time to add a new {{ templateName }}.</h1>
-<form method="post" id="new-item-form" name="new-item" action="public/">
+<form method="post" id="new-item-form" name="new-item" action="/public/bundle/food">
   {% for field in fields %}
     <div id="item-name" class="form-group">
       <label for="{{ field.id }}" class="d-block">{{ field.label }}</label>

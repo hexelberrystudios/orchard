@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <h1 class="add-header">Time to make a new template!</h1>
-<form method="post" id="new-template-form" name="new-template" action="public/new-item">
+<form method="post" id="new-template-form" name="new-template" action="/public/new-item">
   <div id="template-name" class="form-group">
     <label for="name" class="d-block">Name</label>
     <input type="text" id="name" name="template_name" />
@@ -17,9 +17,21 @@
         <option value="text">Text</option>
         <option value="date">Date</option>
         <option value="link">Link</option>
+        <option value="date">Date</option>
         <option value="textArea">Text Area</option>
       </select>
     </div>
+    <fieldset class="form-group preview-question">
+      <legend>Show in preview?</legend>
+      <label for="preview_no_0" class="d-block">
+        <input id="preview_no_0" type="radio" name="preview_0" value="no" />
+        No
+      </label>
+      <label for="preview_yes_0" class="d-block">
+        <input id="preview_yes_0" type="radio" name="preview_0" value="yes" />
+        Yes
+      </label>
+    </fieldset>
     <div class="form-group">
       <button type="button" class="round-btn add-btn-js">
         <!-- ligatures automatically convert text to icon -->
@@ -40,39 +52,42 @@
     var numFields = 0;
     
     document.addEventListener('DOMContentLoaded', function (e) {
-      addAnotherFieldForm();
+      addAnotherFieldForm(document.getElementById('template-name'));
     });
     
-    function addAnotherFieldForm () {
+    function addAnotherFieldForm (locationNode) {
       var addFieldForm = document.getElementById('field-form-template');
       var pageForm = document.getElementById('new-template-form');
-      var templateNameFieldGroup = document.getElementById('template-name');
       var newForm,
           addFieldBtn,
           removeFieldBtn;
       
       numFields++;
       newForm = addFieldForm.cloneNode(true);
-      newForm.setAttribute('id', '');
+      newForm.setAttribute('id', 'field_form_' + numFields);
       newForm.className = newForm.className.replace('d-none', '');
       newForm.querySelector('#field_label_0').setAttribute('name', 'field_label_' + numFields);
       newForm.querySelector('#field_type_0').setAttribute('name', 'field_type_' + numFields);
+      newForm.querySelector('#preview_no_0').setAttribute('name', 'preview_' + numFields);
+      newForm.querySelector('#preview_yes_0').setAttribute('name', 'preview_' + numFields);
       addFieldBtn = newForm.querySelector('.add-btn-js');
       removeFieldBtn = newForm.querySelector('.remove-btn-js');
       
       // add another field; show remove button
       addFieldBtn.addEventListener('click', function (e) {
-        addAnotherFieldForm();
-        addFieldBtn.className += ' d-none';
-        removeFieldBtn.className = removeFieldBtn.className.replace('d-none', '');
+        var relatedRemoveFieldBtn = e.currentTarget.nextElementSibling;
+        e.currentTarget.className += ' d-none';
+        relatedRemoveFieldBtn.className = relatedRemoveFieldBtn.className.replace('d-none', '');
+        addAnotherFieldForm(document.getElementById('field_form_' + numFields));
       });
       // remove field
       removeFieldBtn.addEventListener('click', function (e) {
-        pageForm.removeChild(newForm);
+        // remove field-form
+        pageForm.removeChild(e.currentTarget.parentNode.parentNode);
       });
       
       // insert field form between template name and submit button
-      pageForm.insertBefore(newForm, templateNameFieldGroup.nextSibling);
+      pageForm.insertBefore(newForm, locationNode.nextSibling);
     }
   })();
 </script>

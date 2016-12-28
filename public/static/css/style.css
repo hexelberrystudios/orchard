@@ -141,3 +141,7 @@ ul {
   font-size: 1rem;
   min-width: 15%;
 }
+
+.preview-question {
+  width: 11rem;
+}

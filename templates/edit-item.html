@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="add-header">Now editing: {{ itemName }}.</h1>
+<form method="get" id="new-item-form" name="new-item" action="/public/bundle/food">
+  {% for field in fields %}
+    <div class="form-group">
+      <label for="{{ field.id }}" class="d-block">{{ field.label }}</label>
+      {% if field.type == 'text' %}
+        <input id="{{ field.id }}" type="text" value="{{ field.value }}" />
+      {% elseif field.type == 'textArea' %}
+        <textarea id="{{ field.id }}" rows="10" cols="50">{{ field.value }}</textarea>
+      {% endif %}
+    </div>
+  {% endfor %}
+  <div class="form-group is-submit">
+    <button type="submit" class="action-btn">Done! Let's move on.</button>
+  </div>
+</form>
+{% endblock %}

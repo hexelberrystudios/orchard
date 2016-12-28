@@ -126,6 +126,7 @@ $app->post(
             $fields[] = array('label' => $_POST['field_label_'.$numFields],
                               'type' => $_POST['field_type_'.$numFields],
                               'id' => $_POST['field_'.$numFields]);
+            $numFields++;
         }
         
         $app->render('new-item.html', array('templateName' => $_POST['template_name'],
@@ -144,6 +145,92 @@ $app->get(
     '/choose-item',
     function () use ($app) {
         $app->render('choose-item.html');
+    }
+);
+
+$app->get(
+    '/bundle/food',
+    function () use ($app) {
+        $items = array(
+            // item
+            array(
+                // field
+                array('label' => 'name',
+                      'type' => 'text',
+                      'value' => 'Apple fritters',
+                      'preview' => true),
+                // field
+                array('label' => 'description',
+                      'type' => 'text',
+                      'value' => 'A delicious dessert.',
+                      'preview' => true),
+                // field
+                array('label' => 'ingredients',
+                      'type' => 'textArea',
+                      'value' => '1. Apples 2. Fritters',
+                      'preview' => false),
+                // field
+                array('label' => 'directions',
+                      'type' => 'textArea',
+                      'value' => 'Make apple fritters.',
+                      'preview' => false)
+            ),
+            // item
+            array(
+                // field
+                array('label' => 'name',
+                      'type' => 'text',
+                      'value' => 'Chili',
+                      'preview' => true),
+                // field
+                array('label' => 'description',
+                      'type' => 'text',
+                      'value' => 'A hearty dinner.',
+                      'preview' => true),
+                // field
+                array('label' => 'ingredients',
+                      'type' => 'textArea',
+                      'value' => '1. Meat 2. Beans',
+                      'preview' => false),
+                // field
+                array('label' => 'directions',
+                      'type' => 'textArea',
+                      'value' => 'Make chili.',
+                      'preview' => false)
+            )
+        );
+        $app->render('food.html', array('items' => $items));
+    }
+);
+
+$app->get(
+    '/edit-item',
+    function () use ($app) {
+        $item = array(
+            // field
+            array('label' => 'name',
+                  'type' => 'text',
+                  'value' => 'Apple fritters',
+                  'preview' => true),
+            // field
+            array('label' => 'description',
+                  'type' => 'text',
+                  'value' => 'A delicious dessert.',
+                  'preview' => true),
+            // field
+            array('label' => 'ingredients',
+                  'type' => 'textArea',
+                  'value' => '1. Apples 2. Fritters',
+                  'preview' => false),
+            // field
+            array('label' => 'directions',
+                  'type' => 'textArea',
+                  'value' => 'Make apple fritters.',
+                  'preview' => false)
+        );
+        
+        $app->render('edit-item.html', array('itemName' => $item[0]['value'],
+                                             'fields' => $item));
     }
 );
 
