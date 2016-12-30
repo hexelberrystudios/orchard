@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
-<h1 class="add-header">Alright! Time to add a new {{ templateName }}.</h1>
+<h1 class="add-header">Alright! We're adding a new {{ templateName }}.</h1>
 <form method="get" id="new-item-form" name="new-item" action="/public/bundle/food">
   {% for field in fields %}
-    <div id="item-name" class="form-group">
+    <div class="form-group">
       <label for="{{ field.id }}" class="d-block">{{ field.label }}</label>
       {% if field.type == 'text' %}
         <input id="{{ field.id }}" type="text" />
@@ -12,6 +12,10 @@
       {% endif %}
     </div>
   {% endfor %}
+  <div class="form-group">
+    <label for="bundle-list" class="d-block">What bundles would you like to add this item to?</label>
+    <input type="text" id="bundle-list" name="bundle-list" />
+  </div>
   <div class="form-group is-submit">
     <button type="submit" class="action-btn">Save</button>
   </div>
