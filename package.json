@@ -1,5 +1,8 @@
 {
   "dependencies": {
-    "sails": "^0.12.11"
+    "hoodie": "^26.0.0"
+  },
+  "scripts": {
+    "start": "hoodie"
   }
 }
