@@ -18,10 +18,10 @@ server.register(require('vision'), function (error) {
       html: require('handlebars')
     },
     relativeTo: __dirname,
-    path: './views',
-    layoutPath: './views',
-    layout: './layout',
-    partialsPath: './views/partials'
+    path: 'views',
+    layoutPath: 'views',
+    layout: 'layout',
+    partialsPath: 'views/partials'
   });
 });
 
