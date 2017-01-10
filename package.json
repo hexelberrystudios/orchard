@@ -1,6 +1,8 @@
 {
   "dependencies": {
-    "hoodie": "^26.0.0"
+    "handlebars": "^4.0.6",
+    "hoodie": "^26.0.0",
+    "vision": "^4.1.1"
   },
   "scripts": {
     "start": "hoodie"
