@@ -8,6 +8,10 @@ server.connection({
   port: 8000
 });
 
+// setup routes
+server.route(routes);
+
+// setup views
 server.register(require('vision'), function (error) {
   if (error) {
     throw error;
@@ -25,8 +29,34 @@ server.register(require('vision'), function (error) {
   });
 });
 
-server.route(routes);
+// setup serving static files
+server.register(require('inert'), function (error) {
+  if (error) {
+    throw error;
+  }
 
+  server.route({
+    method: 'GET',
+    path: '/js/{file*}',
+    handler: {
+      directory: {
+        path: 'public/static/js'
+      }
+    }
+  });
+
+  server.route({
+    method: 'GET',
+    path: '/css/{file*}',
+    handler: {
+      directory: {
+        path: 'public/static/css'
+      }
+    }
+  })
+});
+
+// setup hoodie/server
 server.register({
   register: hoodie,
   options: { // pass options here
