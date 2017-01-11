@@ -4,8 +4,8 @@ var routes = require('./controllers/routes');
 
 var server = new Hapi.Server();
 server.connection({
-  host: 'localhost',
-  port: 8000
+  host: process.env.IP,
+  port: process.env.PORT
 });
 
 // setup routes
@@ -19,13 +19,13 @@ server.register(require('vision'), function (error) {
 
   server.views({
     engines: {
-      html: require('handlebars')
+      html: require('ejs')
     },
     relativeTo: __dirname,
     path: 'views',
     layoutPath: 'views',
     layout: 'layout',
-    partialsPath: 'views/partials'
+    partialsPath: 'views/components'
   });
 });
 

@@ -1,0 +1,129 @@
+<main>
+  <h1>Style Guide</h1>
+  <article>
+    <header>
+      <h2 id="colors">Colors</h2>
+    </header>
+    <section>
+      
+    </section>
+  </article>
+  <article>
+    <header>
+      <h2 id="typography">Typography</h2>
+    </header>
+    <section>
+      
+    </section>
+  </article>
+  <article>
+    <header>
+      <h2 id="buttons">Buttons</h2>
+    </header>
+    <section id="button_doc">
+      <div>
+        {{> button 
+              text = "Button"
+        }}
+      </div>
+      <code id="button" class="component-js"></code>
+    </section>
+    <section id="submit_button_doc">
+      <div>
+        {{> submit-button 
+              text = "Submit"
+        }}
+      </div>
+      <code id="submit_button" class="component-js"></code>
+    </section>
+  </article>
+  <article>
+    <header>
+      <h2 id="forms">Forms</h2>
+    </header>
+    <section id="text_field_doc">
+      <div>
+        {{> text-field
+              id = "example_text_field"
+              label = "Text Field"
+              placeholder = "Placeholder"
+        }}
+      </div>
+      <code id="text_field" class="component-js"></code>
+    </section>
+    <section id="textarea_doc">
+      <div>
+        {{> textarea-field
+              id = "example_textarea_field"
+              label = "Text Area"
+              placeholder = "Placeholder"
+        }}
+      </div>
+      <code id="textarea_field" class="component-js"></code>
+    </section>
+    <section id="checkbox_doc">
+      <div>
+        {{> checkbox-field
+              id = "example_checkbox"
+              label = "Checkbox"
+              value = "checked"
+        }}
+      </div>
+      <code id="checkbox_field" class="component-js"></code>
+    </section>
+    <section id="radio_button_doc">
+      <div>
+        <%- include("components/radio-button-field",{id: "example_radio_button", label: "Radio Buttons", options: [{ "label": 'Option 1', "value": "option_1" }, { "label": "Option 2", "value": "option_2" }]}) %>
+      </div>
+      <code id="radio_button_field" class="component-js"></code>
+    </section>
+  </article>
+  <article>
+    <header>
+      <h2 id=""></h2>
+    </header>
+    <section id="">
+      <div>
+        
+      </div>
+      <code id="" class="component-js"></code>
+    </section>
+  </article>
+</main>
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function (e) {
+    var component,
+        i;
+    var componentSource = document.querySelectorAll('.component-js');
+    var components = {
+        button: `{{> button 
+                       text = "\{{ text }}"
+                 }}`,
+        submit_button: `{{> submit-button 
+                              text = "\{{ text }}"
+                        }}`,
+        text_field: `{{> text-field
+                           id = "\{{ id }}"
+                           label = "\{{ label }}"
+                           placeholder = "\{{ placeholder }}"
+                           value = "\{{ value }}"
+                     }}`,
+        textarea_field: `{{> textarea-field
+                               id = "\{{ id }}"
+                               label = "\{{ label }}"
+                               placeholder = "\{{ placeholder }}"
+                               value = "\{{ value }}"
+                        }}`,
+        checkbox_field: `{{> checkbox-field
+                               id = "\{{ id }}"
+                               label = "\{{ label }}"
+                               value = "\{{ value }}"
+                         }}`,
+        radio_button_field: `<%- include("components/radio-button-field",{id: "example_radio_button", label: "Radio Buttons", options: [{ "label": 'Option 1', "value": "option_1" }, { "label": "Option 2", "value": "option_2" }]}) %>`
+      };
+    
+    for (i = 0; i < componentSource.length; i++) {
+      componentSource[i].innerText = components[componentSource[i].getAttribute('id')];
+    }
+  });
+</script>
