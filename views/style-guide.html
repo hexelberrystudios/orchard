@@ -5,7 +5,43 @@
       <h2 id="colors">Colors</h2>
     </header>
     <section>
-      
+      <ul id="color-cards">
+        <li class="hxb-u-border hxb-dark-border-color" aria-label="The dark color display, followed by the CSS classes that enable the use of the dark color">
+          <span class="hxb-dark-bg-color"></span>
+          <span>.hxb-dark-txt-color</span>
+          <span>.hxb-dark-bg-color</span>
+          <span>.hxb-dark-border-color</span>
+        </li>
+        <li class="hxb-u-border hxb-dark-border-color" aria-label="The medium color display, followed by the CSS classes that enable the use of the medium color">
+          <span class="hxb-med-bg-color"></span>
+          <span>.hxb-med-txt-color</span>
+          <span>.hxb-med-bg-color</span>
+          <span>.hxb-med-border-color</span>
+        </li>
+        <li class="hxb-u-border hxb-dark-border-color" aria-label="The gray color display, followed by the CSS classes that enable the use of the gray color">
+          <span class="hxb-gray-bg-color"></span>
+          <span>.hxb-gray-bg-color</span>
+          <span>.hxb-gray-border-color</span>
+        </li>
+        <li class="hxb-u-border hxb-dark-border-color" aria-label="The light color display, followed by the CSS classes that enable the use of the light color">
+          <span class="hxb-light-bg-color"></span>
+          <span>.hxb-light-txt-color</span>
+          <span>.hxb-light-bg-color</span>
+          <span>.hxb-light-border-color</span>
+        </li>
+        <li class="hxb-u-border hxb-dark-border-color" aria-label="The very light color display, followed by the CSS classes that enable the use of the very light color">
+          <span class="hxb-light-bg-color"></span>
+          <span>.hxb-v-light-txt-color</span>
+          <span>.hxb-v-light-bg-color</span>
+        </li>
+        <!--
+        <li class="hxb-u-border hxb-dark-border-color" aria-label="The black color display, followed by the CSS classes that enable the use of the black color">
+          <span class="hxb-black-bg-color"></span>
+          <span>.hxb-black-txt-color</span>
+          <span>.hxb-black-bg-color</span>
+        </li>
+        -->
+      </ul>
     </section>
   </article>
   <article>
@@ -13,7 +49,7 @@
       <h2 id="typography">Typography</h2>
     </header>
     <section>
-      
+      <p>Using default system fonts.</p>
     </section>
   </article>
   <article>
@@ -24,13 +60,13 @@
       <div>
         <%- include("components/button", { text: "Button" }) %>
       </div>
-      <code id="button" class="component-js"></code>
+      <code id="button" class="component-js hxb-light-bg-color hxb-gray-border-color hxb-u-border hxb-u-display-block"></code>
     </section>
     <section id="submit_button_doc">
       <div>
         <%- include("components/submit-button", { text: "Submit" }) %>
       </div>
-      <code id="submit_button" class="component-js"></code>
+      <code id="submit_button" class="component-js hxb-light-bg-color hxb-gray-border-color hxb-u-border hxb-u-display-block"></code>
     </section>
   </article>
   <article>
@@ -39,29 +75,41 @@
     </header>
     <section id="text_field_doc">
       <div>
-        <%- include("components/text-field", { id: "example_text_field", label: "Text Field" }) %>
+        <%- include("components/text-field", { id: "example_text_field", label: "Text Field", placeholder: "Placeholder" }) %>
       </div>
-      <code id="text_field" class="component-js"></code>
+      <code id="text_field" class="component-js hxb-light-bg-color hxb-gray-border-color hxb-u-border hxb-u-display-block"></code>
     </section>
     <section id="textarea_doc">
       <div>
         <%- include("components/textarea-field", { id: "example_textarea_field", label: "Text Area", placeholder: "Placeholder" }) %>
       </div>
-      <code id="textarea_field" class="component-js"></code>
+      <code id="textarea_field" class="component-js hxb-light-bg-color hxb-gray-border-color hxb-u-border hxb-u-display-block"></code>
     </section>
     <section id="checkbox_doc">
       <div>
         <%- include("components/checkbox-field", { id: "example_checkbox", label: "Checkbox", value: "Checkbox" }) %>
       </div>
-      <code id="checkbox_field" class="component-js"></code>
+      <code id="checkbox_field" class="component-js hxb-light-bg-color hxb-gray-border-color hxb-u-border hxb-u-display-block"></code>
     </section>
     <section id="radio_button_doc">
       <div>
         <%- include("components/radio-button-field",{id: "example_radio_button", label: "Radio Buttons", options: [{ "label": 'Option 1', "value": "option_1" }, { "label": "Option 2", "value": "option_2" }]}) %>
       </div>
-      <code id="radio_button_field" class="component-js"></code>
+      <code id="radio_button_field" class="component-js hxb-light-bg-color hxb-gray-border-color hxb-u-border hxb-u-display-block"></code>
     </section>
   </article>
+  <!-- TODO: Lists -->
+  <!-- TODO: Checklist -->
+  <!-- TODO: Dropdowns -->
+  <!-- TODO: Header -->
+  <!-- TODO: Footer -->
+  <!-- TODO: Date -->
+  <!-- TODO: Time -->
+  <!-- TODO: Note -->
+  <!-- TODO: Time spent -->
+  <!-- TODO: Links -->
+  <!-- TODO: Images -->
+  <!-- TODO: Date repeat -->
   <article>
     <header>
       <h2 id=""></h2>
@@ -70,7 +118,7 @@
       <div>
         
       </div>
-      <code id="" class="component-js"></code>
+      <code id="" class="component-js hxb-light-bg-color hxb-gray-border-color hxb-u-border hxb-u-display-block"></code>
     </section>
   </article>
 </main>
@@ -82,7 +130,7 @@
     var components = {
         button: `<%- include("components/button", { text: "{{ text }}" }) %>`,
         submit_button: `<%- include("components/submit-button", { text: "{{ text }}" }) %>`,
-        text_field: `<%- include("components/text-field", { id: "{{ id }}", label: "{{ label }}", value: "{{ value }}" }) %>`,
+        text_field: `<%- include("components/text-field", { id: "{{ id }}", label: "{{ label }}", placeholder: "{{ placeholder }}", value: "{{ value }}" }) %>`,
         textarea_field: `<%- include("components/textarea-field", { id: "{{ id }}", label: "{{ label }}", placeholder: "{{ placeholder }}", value: "{{ value }}" }) %>`,
         checkbox_field: `<%- include("components/checkbox-field", { id: "{{ id }}", label: "{{ label }}", value: "{{ value }}" }) %>`,
         radio_button_field: `<%- include("components/radio-button-field", { id: "example_radio_button", label: "Radio Buttons", options: [{ "label": 'Option 1', "value": "option_1" }, { "label": "Option 2", "value": "option_2" }]}) %>`
@@ -102,14 +150,34 @@
 
   code {
     margin: 1rem;
-    display: block;
-    background-color: #f9f8ff;
     padding: 0.5rem;
-    border-radius: 0.25rem;
-    border: 0.1rem solid #d4d0e6;
   }
 
   section > div {
     margin: 1rem;
+  }
+  
+  #color-cards {
+    list-style: none;
+  }
+  
+  #color-cards > li {
+    display: inline-block;
+    text-align: center;
+    width: 25%;
+    margin-bottom: 1rem;
+    vertical-align: top;
+    min-height: 13rem;
+  }
+  
+  #color-cards > li > * {
+    display: block;
+    line-height: 1.5;
+  }
+  
+  #color-cards > li > span:first-child {
+    padding: 4rem;
+    border-top-left-radius: 0.3rem;
+    border-top-right-radius: 0.3rem;
   }
 </style>

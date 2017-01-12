@@ -12,4 +12,94 @@ body, html {
     "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", 
     "Fira Sans", "Droid Sans", "Helvetica Neue", 
     sans-serif;
+  line-height: 1.5;
+}
+
+/* Colors */
+.hxb-dark-txt-color {
+  color: #4b255e;
+}
+
+.hxb-dark-bg-color {
+  background-color: #4b255e;
+}
+
+.hxb-dark-border-color {
+  border-color: #4b255e;
+}
+
+.hxb-med-txt-color {
+  color: #70285f;
+}
+
+.hxb-med-bg-color {
+  background-color: #70285f;
+}
+
+.hxb-med-border-color {
+  border-color: #70285f;
+}
+
+.hxb-light-txt-color {
+  color: #fbf8fa;
+}
+
+.hxb-light-bg-color {
+  background-color: #fbf8fa;
+}
+
+.hxb-light-border-color {
+  border-color: #fbf8fa;
+}
+
+.hxb-black-txt-color {
+  color: #555;
+}
+
+.hxb-black-bg-color {
+  background-color: #555;
+}
+
+.hxb-gray-bg-color {
+  background-color: #d4c4d0;
+}
+
+.hxb-gray-border-color {
+  border-color: #d4c4d0;
+}
+
+.hxb-v-light-bg-color {
+  background-color: #fff;
+}
+
+.hxb-v-light-txt-color {
+  color: #fff;
+}
+
+/* Forms */
+
+/* Label */
+
+/* Text field, Text Area field */
+.hxb-input-field {
+  font-size: 1rem;
+  padding: 0.25rem;
+  box-shadow: inset 0 0.1rem 0.1rem rgba(0, 0, 0, .075);
+}
+
+/* Buttons */
+.hxb-button {
+  font-size: 1rem;
+  padding: 0.25rem 0.5rem;
+}
+
+/* Utilities */
+.hxb-u-display-block {
+  display: block;
+}
+
+.hxb-u-border {
+  border-width: 0.1rem;
+  border-radius: 0.25rem;
+  border-style: solid;
 }
