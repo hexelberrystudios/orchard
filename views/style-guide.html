@@ -22,17 +22,13 @@
     </header>
     <section id="button_doc">
       <div>
-        {{> button 
-              text = "Button"
-        }}
+        <%- include("components/button", { text: "Button" }) %>
       </div>
       <code id="button" class="component-js"></code>
     </section>
     <section id="submit_button_doc">
       <div>
-        {{> submit-button 
-              text = "Submit"
-        }}
+        <%- include("components/submit-button", { text: "Submit" }) %>
       </div>
       <code id="submit_button" class="component-js"></code>
     </section>
@@ -43,31 +39,19 @@
     </header>
     <section id="text_field_doc">
       <div>
-        {{> text-field
-              id = "example_text_field"
-              label = "Text Field"
-              placeholder = "Placeholder"
-        }}
+        <%- include("components/text-field", { id: "example_text_field", label: "Text Field" }) %>
       </div>
       <code id="text_field" class="component-js"></code>
     </section>
     <section id="textarea_doc">
       <div>
-        {{> textarea-field
-              id = "example_textarea_field"
-              label = "Text Area"
-              placeholder = "Placeholder"
-        }}
+        <%- include("components/textarea-field", { id: "example_textarea_field", label: "Text Area", placeholder: "Placeholder" }) %>
       </div>
       <code id="textarea_field" class="component-js"></code>
     </section>
     <section id="checkbox_doc">
       <div>
-        {{> checkbox-field
-              id = "example_checkbox"
-              label = "Checkbox"
-              value = "checked"
-        }}
+        <%- include("components/checkbox-field", { id: "example_checkbox", label: "Checkbox", value: "Checkbox" }) %>
       </div>
       <code id="checkbox_field" class="component-js"></code>
     </section>
@@ -96,30 +80,12 @@
         i;
     var componentSource = document.querySelectorAll('.component-js');
     var components = {
-        button: `{{> button 
-                       text = "\{{ text }}"
-                 }}`,
-        submit_button: `{{> submit-button 
-                              text = "\{{ text }}"
-                        }}`,
-        text_field: `{{> text-field
-                           id = "\{{ id }}"
-                           label = "\{{ label }}"
-                           placeholder = "\{{ placeholder }}"
-                           value = "\{{ value }}"
-                     }}`,
-        textarea_field: `{{> textarea-field
-                               id = "\{{ id }}"
-                               label = "\{{ label }}"
-                               placeholder = "\{{ placeholder }}"
-                               value = "\{{ value }}"
-                        }}`,
-        checkbox_field: `{{> checkbox-field
-                               id = "\{{ id }}"
-                               label = "\{{ label }}"
-                               value = "\{{ value }}"
-                         }}`,
-        radio_button_field: `<%- include("components/radio-button-field",{id: "example_radio_button", label: "Radio Buttons", options: [{ "label": 'Option 1', "value": "option_1" }, { "label": "Option 2", "value": "option_2" }]}) %>`
+        button: `<%- include("components/button", { text: "{{ text }}" }) %>`,
+        submit_button: `<%- include("components/submit-button", { text: "{{ text }}" }) %>`,
+        text_field: `<%- include("components/text-field", { id: "{{ id }}", label: "{{ label }}", value: "{{ value }}" }) %>`,
+        textarea_field: `<%- include("components/textarea-field", { id: "{{ id }}", label: "{{ label }}", placeholder: "{{ placeholder }}", value: "{{ value }}" }) %>`,
+        checkbox_field: `<%- include("components/checkbox-field", { id: "{{ id }}", label: "{{ label }}", value: "{{ value }}" }) %>`,
+        radio_button_field: `<%- include("components/radio-button-field", { id: "example_radio_button", label: "Radio Buttons", options: [{ "label": 'Option 1', "value": "option_1" }, { "label": "Option 2", "value": "option_2" }]}) %>`
       };
     
     for (i = 0; i < componentSource.length; i++) {
