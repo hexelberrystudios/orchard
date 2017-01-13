@@ -77,6 +77,12 @@
       </div>
       <code id="text_field" class="component-js"></code>
     </section>
+    <section id="email_field_doc">
+      <div>
+        <%- include("components/email-field", { id: "example_email_field", label: "Email Field", placeholder: "Placeholder" }) %>
+      </div>
+      <code id="email_field" class="component-js"></code>
+    </section>
     <section id="textarea_doc">
       <div>
         <%- include("components/textarea-field", { id: "example_textarea_field", label: "Text Area", placeholder: "Placeholder" }) %>
@@ -91,12 +97,23 @@
     </section>
     <section id="radio_button_doc">
       <div>
-        <%- include("components/radio-button-field",{id: "example_radio_button", label: "Radio Buttons", options: [{ "label": 'Option 1', "value": "option_1" }, { "label": "Option 2", "value": "option_2" }]}) %>
+        <%- include("components/radio-button-field", {id: "example_radio_button", label: "Radio Buttons", options: [{ "label": 'Option 1', "value": "option_1" }, { "label": "Option 2", "value": "option_2" }]}) %>
       </div>
       <code id="radio_button_field" class="component-js"></code>
     </section>
   </article>
   <!-- TODO: Lists -->
+  <article>
+    <header>
+      <h2 id="lists">Lists</h2>
+    </header>
+    <section id="object_list_doc">
+      <div>
+        <%- include("components/object-list", { objects: [{ link: "#", label: "One thing" }, { link: "#", label: "Another thing" }, { link: "#", label: "The best thing" }]}) %>
+      </div>
+      <code id="object_list" class="component-js"></code>
+    </section>
+  </article>
   <!-- TODO: Checklist -->
   <!-- TODO: Dropdowns -->
   <!-- TODO: Header -->
@@ -130,9 +147,11 @@
         button: `<%- include("components/button", { text: "{{ text }}" }) %>`,
         submit_button: `<%- include("components/submit-button", { text: "{{ text }}" }) %>`,
         text_field: `<%- include("components/text-field", { id: "{{ id }}", label: "{{ label }}", placeholder: "{{ placeholder }}", value: "{{ value }}" }) %>`,
+        email_field: `<%- include("components/email-field", { id: "{{ id }}", label: "{{ label }}", placeholder: "{{ placeholder }}", value: "{{ value }}" }) %>`,
         textarea_field: `<%- include("components/textarea-field", { id: "{{ id }}", label: "{{ label }}", placeholder: "{{ placeholder }}", value: "{{ value }}" }) %>`,
         checkbox_field: `<%- include("components/checkbox-field", { id: "{{ id }}", label: "{{ label }}", value: "{{ value }}" }) %>`,
-        radio_button_field: `<%- include("components/radio-button-field", { id: "example_radio_button", label: "Radio Buttons", options: [{ "label": 'Option 1', "value": "option_1" }, { "label": "Option 2", "value": "option_2" }]}) %>`
+        radio_button_field: `<%- include("components/radio-button-field", { id: "example_radio_button", label: "Radio Buttons", options: [{ "label": 'Option 1', "value": "option_1" }, { "label": "Option 2", "value": "option_2" }]}) %>`,
+        object_list: `<%- include("components/object-list", { objects: [{ link: "#", label: "{{ label }}" }] }) %>`
       };
     
     for (i = 0; i < componentSource.length; i++) {
@@ -182,7 +201,7 @@
   
   #color-cards > li > span:first-child {
     padding: 4rem;
-    border-top-left-radius: 0.3rem;
-    border-top-right-radius: 0.3rem;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
   }
 </style>

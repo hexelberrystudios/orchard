@@ -1,0 +1,10 @@
+<ul class="hxb-object-list">
+  <% for (var i = 0; i < objects.length; i++) { %>
+    <li class="hxb-object-list-item">
+      <a href="<%= objects[i].link %>" class="hxb-object-list-item__link">
+        <span><%= objects[i].label %></span>
+        <span class="hxb-object-list-item__arrow">&#8674;</span>
+      </a>
+    </li>
+  <% } %>
+</ul>

@@ -49,6 +49,34 @@ body, html {
   color: var(--v-light-color);
 }
 
+/* Lists */
+/* Object list: The list that shows the user's list of bundles and items. */
+.hxb-object-list {
+  list-style: none;
+}
+
+.hxb-object-list-item {
+  font-size: 1.25rem;
+  background-color: var(--light-color);
+  margin: 0.5rem 0.25rem;
+  border-radius: 0.25rem;
+  border-left: 0.25rem solid var(--med-color);
+  /* @TODO: adjust to --gray-color variable */
+  border-top: 0.1rem solid rgba(191, 168, 185, 0.25);
+  box-shadow: 0rem 0.1rem 0.1rem var(--gray-color);
+}
+
+.hxb-object-list-item__link {
+  display: block;
+  padding: 1rem 0.5rem;
+  color: var(--dark-color);
+  text-decoration: none;
+}
+
+.hxb-object-list-item__arrow {
+  float: right;
+}
+
 /* Utilities */
 .hxb-u-display-block {
   display: block;
