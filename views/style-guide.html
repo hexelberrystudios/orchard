@@ -6,41 +6,39 @@
     </header>
     <section>
       <ul id="color-cards">
-        <li class="hxb-u-border hxb-dark-border-color" aria-label="The dark color display, followed by the CSS classes that enable the use of the dark color">
-          <span class="hxb-dark-bg-color"></span>
+        <li aria-label="The black color display, followed by the CSS classes that enable the use of the black color">
+          <span style="background-color: var(--black-color)"></span>
+          <span>.hxb-black-txt-color</span>
+          <span>.hxb-black-bg-color</span>
+        </li>
+        <li aria-label="The dark color display, followed by the CSS classes that enable the use of the dark color">
+          <span style="background-color: var(--dark-color)"></span>
           <span>.hxb-dark-txt-color</span>
           <span>.hxb-dark-bg-color</span>
           <span>.hxb-dark-border-color</span>
         </li>
-        <li class="hxb-u-border hxb-dark-border-color" aria-label="The medium color display, followed by the CSS classes that enable the use of the medium color">
-          <span class="hxb-med-bg-color"></span>
+        <li aria-label="The medium color display, followed by the CSS classes that enable the use of the medium color">
+          <span style="background-color: var(--med-color)"></span>
           <span>.hxb-med-txt-color</span>
           <span>.hxb-med-bg-color</span>
           <span>.hxb-med-border-color</span>
         </li>
-        <li class="hxb-u-border hxb-dark-border-color" aria-label="The gray color display, followed by the CSS classes that enable the use of the gray color">
-          <span class="hxb-gray-bg-color"></span>
+        <li aria-label="The gray color display, followed by the CSS classes that enable the use of the gray color">
+          <span style="background-color: var(--gray-color)"></span>
           <span>.hxb-gray-bg-color</span>
           <span>.hxb-gray-border-color</span>
         </li>
-        <li class="hxb-u-border hxb-dark-border-color" aria-label="The light color display, followed by the CSS classes that enable the use of the light color">
-          <span class="hxb-light-bg-color"></span>
+        <li aria-label="The light color display, followed by the CSS classes that enable the use of the light color">
+          <span style="background-color: var(--light-color)"></span>
           <span>.hxb-light-txt-color</span>
           <span>.hxb-light-bg-color</span>
           <span>.hxb-light-border-color</span>
         </li>
-        <li class="hxb-u-border hxb-dark-border-color" aria-label="The very light color display, followed by the CSS classes that enable the use of the very light color">
-          <span class="hxb-light-bg-color"></span>
+        <li aria-label="The very light color display, followed by the CSS classes that enable the use of the very light color">
+          <span style="background-color: var(--v-light-color)"></span>
           <span>.hxb-v-light-txt-color</span>
           <span>.hxb-v-light-bg-color</span>
         </li>
-        <!--
-        <li class="hxb-u-border hxb-dark-border-color" aria-label="The black color display, followed by the CSS classes that enable the use of the black color">
-          <span class="hxb-black-bg-color"></span>
-          <span>.hxb-black-txt-color</span>
-          <span>.hxb-black-bg-color</span>
-        </li>
-        -->
       </ul>
     </section>
   </article>
@@ -60,13 +58,13 @@
       <div>
         <%- include("components/button", { text: "Button" }) %>
       </div>
-      <code id="button" class="component-js hxb-light-bg-color hxb-gray-border-color hxb-u-border hxb-u-display-block"></code>
+      <code id="button" class="component-js"></code>
     </section>
     <section id="submit_button_doc">
       <div>
         <%- include("components/submit-button", { text: "Submit" }) %>
       </div>
-      <code id="submit_button" class="component-js hxb-light-bg-color hxb-gray-border-color hxb-u-border hxb-u-display-block"></code>
+      <code id="submit_button" class="component-js"></code>
     </section>
   </article>
   <article>
@@ -77,25 +75,25 @@
       <div>
         <%- include("components/text-field", { id: "example_text_field", label: "Text Field", placeholder: "Placeholder" }) %>
       </div>
-      <code id="text_field" class="component-js hxb-light-bg-color hxb-gray-border-color hxb-u-border hxb-u-display-block"></code>
+      <code id="text_field" class="component-js"></code>
     </section>
     <section id="textarea_doc">
       <div>
         <%- include("components/textarea-field", { id: "example_textarea_field", label: "Text Area", placeholder: "Placeholder" }) %>
       </div>
-      <code id="textarea_field" class="component-js hxb-light-bg-color hxb-gray-border-color hxb-u-border hxb-u-display-block"></code>
+      <code id="textarea_field" class="component-js"></code>
     </section>
     <section id="checkbox_doc">
       <div>
         <%- include("components/checkbox-field", { id: "example_checkbox", label: "Checkbox", value: "Checkbox" }) %>
       </div>
-      <code id="checkbox_field" class="component-js hxb-light-bg-color hxb-gray-border-color hxb-u-border hxb-u-display-block"></code>
+      <code id="checkbox_field" class="component-js"></code>
     </section>
     <section id="radio_button_doc">
       <div>
         <%- include("components/radio-button-field",{id: "example_radio_button", label: "Radio Buttons", options: [{ "label": 'Option 1', "value": "option_1" }, { "label": "Option 2", "value": "option_2" }]}) %>
       </div>
-      <code id="radio_button_field" class="component-js hxb-light-bg-color hxb-gray-border-color hxb-u-border hxb-u-display-block"></code>
+      <code id="radio_button_field" class="component-js"></code>
     </section>
   </article>
   <!-- TODO: Lists -->
@@ -110,6 +108,7 @@
   <!-- TODO: Links -->
   <!-- TODO: Images -->
   <!-- TODO: Date repeat -->
+  <!-- TODO: Cards -->
   <article>
     <header>
       <h2 id=""></h2>
@@ -118,7 +117,7 @@
       <div>
         
       </div>
-      <code id="" class="component-js hxb-light-bg-color hxb-gray-border-color hxb-u-border hxb-u-display-block"></code>
+      <code id="" class="component-js"></code>
     </section>
   </article>
 </main>
@@ -147,10 +146,14 @@
     margin: 0 auto;
     font-size: 1rem;
   }
-
+  
   code {
+    display: block;
     margin: 1rem;
     padding: 0.5rem;
+    background-color: var(--light-color);
+    border: 0.1rem solid var(--gray-color);
+    border-radius: 0.25rem;
   }
 
   section > div {
@@ -168,6 +171,8 @@
     margin-bottom: 1rem;
     vertical-align: top;
     min-height: 13rem;
+    border-radius: 0.25rem;
+    border: 0.1rem solid var(--dark-color);
   }
   
   #color-cards > li > * {
