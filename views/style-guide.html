@@ -8,36 +8,27 @@
       <ul id="color-cards">
         <li aria-label="The black color display, followed by the CSS classes that enable the use of the black color">
           <span style="background-color: var(--black-color)"></span>
-          <span>.hxb-black-txt-color</span>
-          <span>.hxb-black-bg-color</span>
+          <span>var(--black-color)</span>
         </li>
         <li aria-label="The dark color display, followed by the CSS classes that enable the use of the dark color">
           <span style="background-color: var(--dark-color)"></span>
-          <span>.hxb-dark-txt-color</span>
-          <span>.hxb-dark-bg-color</span>
-          <span>.hxb-dark-border-color</span>
+          <span>var(--dark-color)</span>
         </li>
         <li aria-label="The medium color display, followed by the CSS classes that enable the use of the medium color">
           <span style="background-color: var(--med-color)"></span>
-          <span>.hxb-med-txt-color</span>
-          <span>.hxb-med-bg-color</span>
-          <span>.hxb-med-border-color</span>
+          <span>var(--med-color)</span>
         </li>
         <li aria-label="The gray color display, followed by the CSS classes that enable the use of the gray color">
           <span style="background-color: var(--gray-color)"></span>
-          <span>.hxb-gray-bg-color</span>
-          <span>.hxb-gray-border-color</span>
+          <span>var(--gray-color)</span>
         </li>
         <li aria-label="The light color display, followed by the CSS classes that enable the use of the light color">
           <span style="background-color: var(--light-color)"></span>
-          <span>.hxb-light-txt-color</span>
-          <span>.hxb-light-bg-color</span>
-          <span>.hxb-light-border-color</span>
+          <span>var(--light-color)</span>
         </li>
         <li aria-label="The very light color display, followed by the CSS classes that enable the use of the very light color">
           <span style="background-color: var(--v-light-color)"></span>
-          <span>.hxb-v-light-txt-color</span>
-          <span>.hxb-v-light-bg-color</span>
+          <span>var(--v-light-color)</span>
         </li>
       </ul>
     </section>
@@ -189,7 +180,7 @@
     width: 25%;
     margin-bottom: 1rem;
     vertical-align: top;
-    min-height: 13rem;
+    min-height: 10rem;
     border-radius: 0.25rem;
     border: 0.1rem solid var(--dark-color);
   }
@@ -197,6 +188,7 @@
   #color-cards > li > * {
     display: block;
     line-height: 1.5;
+    padding-top: 0.1rem;
   }
   
   #color-cards > li > span:first-child {

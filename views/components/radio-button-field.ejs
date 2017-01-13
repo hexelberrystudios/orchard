@@ -1,8 +1,12 @@
 <fieldset class="hxb-fieldset">
   <legend><%= label %></legend>
   <% for (var i = 0; i < options.length; i++) { %>
-    <label for="<%= id %>_<%= i %>" class="hxb-u-display-block">
-      <input id="<%= id %>_<%= i %>" type="radio" name="<%= id %>" value="<%= options[i].value %>" />
+    <input id="<%= id %>_<%= i %>"
+           type="radio"
+           class="hxb-radio-button"
+           name="<%= id %>"
+           value="<%= options[i].value %>" />
+    <label for="<%= id %>_<%= i %>" class="hxb-radio-button-label">
       <%= options[i].label %>
     </label>
   <% } %>

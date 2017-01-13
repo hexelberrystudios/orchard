@@ -6,6 +6,7 @@
   --gray-color: #d4c4d0;
   --light-color: #fbf8fa;
   --v-light-color: #fff;
+  --gray-color-shadow: rgba(191, 168, 185, 0.25);
 }
 
 body, html {
@@ -39,6 +40,123 @@ body, html {
   border: 0.1rem solid var(--dark-color);
 }
 
+/* Custom checkboxes and radio buttons made due to these observations: https://gdstechnology.blog.gov.uk/2016/12/13/improving-forms-with-new-radios-and-checkboxes/ */
+/* Checkbox */
+/* the actual checkbox */
+.hxb-checkbox {
+  float: left;
+  cursor: pointer;
+  left: 0;
+  top: 0;
+  width: 2.15rem;
+  height: 2.15rem;
+  opacity: 0;
+  margin: 0;
+}
+/* the checkbox box */
+.hxb-checkbox-label:before {
+  content: '';
+  border: 0.15rem solid;
+  background: transparent;
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* the checkbox doesn't actually take up any space, so make sure to move the label over */
+.hxb-checkbox-label {
+  display: block;
+  height: 2rem;
+  position: relative;
+  padding-left: 3rem;
+  padding-top: 0.3rem;
+  cursor: pointer;
+}
+/* the checkmark (an L shape rotated a bit) */
+.hxb-checkbox-label:after {
+  content: '';
+  border: solid;
+  border-width: 0 0 0.3rem 0.3rem;
+  background: transparent;
+  width: 1rem;
+  height: 0.5rem;
+  position: absolute;
+  top: 0.6rem;
+  left: 0.5rem;
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  zoom: 1;
+  filter: alpha(opacity=0);
+  opacity: 0;
+}
+/* show the checkmark when the checkbox is checked */
+.hxb-checkbox:checked + .hxb-checkbox-label:after {
+  opacity: 1;
+}
+
+/* Radio Button */
+/* the actual radio button */
+.hxb-radio-button {
+  float: left;
+  cursor: pointer;
+  left: 0;
+  top: 0;
+  width: 2.15rem;
+  height: 2.15rem;
+  opacity: 0;
+  margin: 0;
+}
+/* the radio button circle */
+.hxb-radio-button-label:before {
+  content: '';
+  border: 0.15rem solid;
+  background: transparent;
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+/* the radio button doesn't actually take up any space, so make sure to move the label over */
+.hxb-radio-button-label {
+  display: block;
+  height: 2rem;
+  position: relative;
+  padding-left: 3rem;
+  padding-top: 0.3rem;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+}
+/* the filling */
+.hxb-radio-button-label:after {
+  content: '';
+  border: 0.65rem solid;
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  zoom: 1;
+  filter: alpha(opacity=0);
+  opacity: 0;
+}
+/* show the filling when the radio button is checked */
+.hxb-radio-button:checked + .hxb-radio-button-label:after {
+  zoom: 1;
+  filter: alpha(opacity=100);
+  opacity: 1;
+}
+
 /* Buttons */
 .hxb-button {
   font-size: 1rem;
@@ -47,6 +165,10 @@ body, html {
   border: 0.1rem solid var(--dark-color);
   background-color: var(--med-color);
   color: var(--v-light-color);
+}
+
+.hxb-button:hover {
+  background-color: var(--dark-color);
 }
 
 /* Lists */
@@ -62,7 +184,7 @@ body, html {
   border-radius: 0.25rem;
   border-left: 0.25rem solid var(--med-color);
   /* @TODO: adjust to --gray-color variable */
-  border-top: 0.1rem solid rgba(191, 168, 185, 0.25);
+  border-top: 0.1rem solid var(--gray-color-shadow);
   box-shadow: 0rem 0.1rem 0.1rem var(--gray-color);
 }
 
