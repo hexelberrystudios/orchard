@@ -66,13 +66,10 @@
       <div>
         <%- include("components/text-field", { id: "example_text_field", label: "Text Field", placeholder: "Placeholder" }) %>
       </div>
+      <p>
+        The type argument allows you to use the text field template for emails, passwords, telephone numbers, etc.
+      </p>
       <code id="text_field" class="component-js"></code>
-    </section>
-    <section id="email_field_doc">
-      <div>
-        <%- include("components/email-field", { id: "example_email_field", label: "Email Field", placeholder: "Placeholder" }) %>
-      </div>
-      <code id="email_field" class="component-js"></code>
     </section>
     <section id="textarea_doc">
       <div>
@@ -93,7 +90,17 @@
       <code id="radio_button_field" class="component-js"></code>
     </section>
   </article>
-  <!-- TODO: Lists -->
+  <article>
+    <header>
+      <h2 id="dropdown_field">Dropdowns</h2>
+    </header>
+    <section id="dropdown_field_doc">
+      <div>
+        <%- include("components/dropdown-field", { id: "example_dropdown", label: "Dropdown", options: [{ value: "", label: "Select a value" }, { value: "one", label: "A value" }, { value: "two", label: "Another value" }]}) %>
+      </div>
+      <code id="dropdown_field" class="component-js"></code>
+    </section>
+  </article>
   <article>
     <header>
       <h2 id="lists">Lists</h2>
@@ -137,12 +144,12 @@
     var components = {
         button: `<%- include("components/button", { text: "{{ text }}" }) %>`,
         submit_button: `<%- include("components/submit-button", { text: "{{ text }}" }) %>`,
-        text_field: `<%- include("components/text-field", { id: "{{ id }}", label: "{{ label }}", placeholder: "{{ placeholder }}", value: "{{ value }}" }) %>`,
-        email_field: `<%- include("components/email-field", { id: "{{ id }}", label: "{{ label }}", placeholder: "{{ placeholder }}", value: "{{ value }}" }) %>`,
+        text_field: `<%- include("components/text-field", { id: "{{ id }}", label: "{{ label }}", type: "{{ type }}", placeholder: "{{ placeholder }}", value: "{{ value }}" }) %>`,
         textarea_field: `<%- include("components/textarea-field", { id: "{{ id }}", label: "{{ label }}", placeholder: "{{ placeholder }}", value: "{{ value }}" }) %>`,
         checkbox_field: `<%- include("components/checkbox-field", { id: "{{ id }}", label: "{{ label }}", value: "{{ value }}" }) %>`,
         radio_button_field: `<%- include("components/radio-button-field", { id: "example_radio_button", label: "Radio Buttons", options: [{ "label": 'Option 1', "value": "option_1" }, { "label": "Option 2", "value": "option_2" }]}) %>`,
-        object_list: `<%- include("components/object-list", { objects: [{ link: "#", label: "{{ label }}" }] }) %>`
+        object_list: `<%- include("components/object-list", { objects: [{ link: "#", label: "{{ label }}" }] }) %>`,
+        dropdown_field: `<%- include("components/dropdown-field", { id: "{{ id }}", label: "{{ label }}", options: [{ value: "", label: "{{ label }}" }]}) %>`
       };
     
     for (i = 0; i < componentSource.length; i++) {

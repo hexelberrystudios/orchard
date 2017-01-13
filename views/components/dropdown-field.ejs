@@ -1,0 +1,7 @@
+<label for="<%= id %>"
+       class="hxb-u-display-block"><%= label %></label>
+<select id="<%= id %>" class="hxb-dropdown">
+  <% for (var i = 0; i < options.length; i++) { %>
+    <option value="<%= options[i].value %>"><%= options[i].label %></option>
+  <% } %>
+</select>

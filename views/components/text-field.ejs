@@ -1,7 +1,7 @@
 <label for="<%= id %>"
        class="hxb-u-display-block"><%= label %></label>
 <input id="<%= id %>"
-       type="text"
+       type="<%= locals.type ? locals.type : 'text' %>"
        name="<%= id %>"
        class="hxb-input-field hxb-u-border hxb-gray-border-color"
        placeholder="<%= locals.placeholder ? locals.placeholder : '' %>"
