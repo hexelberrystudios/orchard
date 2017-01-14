@@ -60,7 +60,7 @@ server.register(require('inert'), function (error) {
         path: 'public/static/css'
       }
     }
-  })
+  });
 });
 
 // setup hoodie/server

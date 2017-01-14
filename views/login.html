@@ -1,8 +1,14 @@
 <main>
   <h1>Hexelberry Orchard</h1>
-  <form name="login" method="post" action="/home">
-    <%- include("components/text-field", { id: "email", label: "Email", type: "email", placeholder: "Email" }) %>
-    <%- include("components/text-field", { id: "password", label: "Password", type: "password", placeholder: "Password" }) %>
-    <%- include("components/submit-button", { text: "Login" }) %>
+  <form name="login" method="post" action="/home" class="hxb-form">
+    <div class="hxb-form-field">
+      <%- include("components/text-field", { id: "username", label: "Username", type: "text", placeholder: "Username" }) %>
+    </div>
+    <div class="hxb-form-field">
+      <%- include("components/text-field", { id: "password", label: "Password", type: "password", placeholder: "Password" }) %>
+    </div>
+    <div class="hxb-form-field">
+      <%- include("components/submit-button", { text: "Login" }) %>
+    </div>
   </form>
 </main>
