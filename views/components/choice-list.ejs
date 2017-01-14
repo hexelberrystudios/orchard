@@ -1,0 +1,9 @@
+<ul class="hxb-choice-list">
+  <% for (var i = 0; i < choices.length; i++) { %>
+    <li class="hxb-choice-list-item">
+      <a href="<%= choices[i].link %>" class="hxb-choice-list-item__link">
+        <span><%= choices[i].label %></span>
+      </a>
+    </li>
+  <% } %>
+</ul>

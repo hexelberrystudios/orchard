@@ -111,6 +111,12 @@
       </div>
       <code id="object_list" class="component-js"></code>
     </section>
+    <section id="choice_list_doc">
+      <div>
+        <%- include("components/choice-list", { choices: [{ link: "#", label: "One thing" }, { link: "#", label: "Another thing" }, { link: "#", label: "The best thing" }]}) %>
+      </div>
+      <code id="choice_list" class="component-js"></code>
+    </section>
   </article>
   <!-- TODO: Checklist -->
   <!-- TODO: Dropdowns -->
@@ -149,6 +155,7 @@
         checkbox_field: `<%- include("components/checkbox-field", { id: "{{ id }}", label: "{{ label }}", value: "{{ value }}" }) %>`,
         radio_button_field: `<%- include("components/radio-button-field", { id: "example_radio_button", label: "Radio Buttons", options: [{ "label": 'Option 1', "value": "option_1" }, { "label": "Option 2", "value": "option_2" }]}) %>`,
         object_list: `<%- include("components/object-list", { objects: [{ link: "#", label: "{{ label }}" }] }) %>`,
+        choice_list: `<%- include("components/choice-list", { choices: [{ link: "#", label: "One thing" }, { link: "#", label: "Another thing" }, { link: "#", label: "The best thing" }]}) %>`,
         dropdown_field: `<%- include("components/dropdown-field", { id: "{{ id }}", label: "{{ label }}", options: [{ value: "", label: "{{ label }}" }]}) %>`
       };
     

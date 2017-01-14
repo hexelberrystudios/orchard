@@ -184,6 +184,8 @@ body, html {
 /* Object list: The list that shows the user's list of bundles and items. */
 .hxb-object-list {
   list-style: none;
+  margin: 0;
+  padding-left: 2.5rem;
 }
 
 .hxb-object-list-item {
@@ -192,7 +194,6 @@ body, html {
   margin: 0.5rem 0.25rem;
   border-radius: 0.25rem;
   border-left: 0.25rem solid var(--med-color);
-  /* @TODO: adjust to --gray-color variable */
   border-top: 0.1rem solid var(--gray-color-shadow);
   box-shadow: 0rem 0.1rem 0.1rem var(--gray-color);
 }
@@ -206,6 +207,26 @@ body, html {
 
 .hxb-object-list-item__arrow {
   float: right;
+}
+
+/* Choice list: Single drop down on the page? Use this instead. */
+.hxb-choice-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.hxb-choice-list-item {
+  font-size: 1.25rem;
+  background-color: var(--light-color);
+  border-top: 0.1rem solid var(--gray-color);
+}
+
+.hxb-choice-list-item__link {
+  display: block;
+  padding: 1rem 0.5rem;
+  color: var(--dark-color);
+  text-decoration: none;
 }
 
 /* Utilities */
