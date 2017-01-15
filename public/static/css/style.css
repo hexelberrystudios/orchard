@@ -1,5 +1,5 @@
-/* Colors */
 :root {
+  /* Colors */
   --dark-color: #4b255e;
   --med-color: #70285f;
   --black-color: #555;
@@ -7,6 +7,8 @@
   --light-color: #fbf8fa;
   --v-light-color: #fff;
   --gray-color-shadow: rgba(191, 168, 185, 0.25);
+  /* Utility vars */
+  --input-field-width: 15rem;
 }
 
 body, html {
@@ -23,6 +25,9 @@ body, html {
 }
 
 /* Forms */
+.hxb-form {
+  transform: translate(calc(50% - var(--input-field-width) / 2), 0%);
+}
 
 /* Label */
 
@@ -34,7 +39,7 @@ body, html {
   border-radius: 0.25rem;
   border: 0.1rem solid var(--gray-color);
   box-shadow: inset 0 0.1rem 0.1rem rgba(0, 0, 0, .075);
-  min-width: 15rem;
+  min-width: var(--input-field-width);
 }
 
 .hxb-fieldset {
@@ -238,4 +243,8 @@ body, html {
 /* Utilities */
 .hxb-u-display-block {
   display: block;
+}
+
+.hxb-u-txt-center {
+  text-align: center;
 }
