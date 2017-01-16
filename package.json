@@ -1,10 +1,15 @@
 {
   "dependencies": {
+    "browserify": "^13.3.0",
     "ejs": "^2.5.5",
+    "events": "^1.1.1",
     "hapi": "^16.1.0",
     "hoodie": "^26.0.0",
     "inert": "^4.1.0",
     "path": "^0.12.7",
+    "pouchdb-adapter-memory": "^6.1.1",
+    "pouchdb-core": "^6.1.1",
+    "pouchdb-mapreduce": "^6.1.1",
     "vision": "^4.1.1"
   },
   "scripts": {

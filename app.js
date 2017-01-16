@@ -68,7 +68,9 @@ server.register({
   register: hoodie,
   options: { // pass options here
     inMemory: true,
-    public: 'dist'
+    paths: {
+      public: '.dist'
+    }
   }
 }, function (error) {
   if (error) {
