@@ -3,18 +3,17 @@ var hoodie = require('hoodie').register;
 var routes = require('./controllers/routes');
 
 var server = new Hapi.Server();
-/*
+
 server.connection({
   host: process.env.IP,
   port: process.env.PORT
 });
-
-*/
+/*
 server.connection({
   host: 'localhost',
   port: 8000
 });
-
+*/
 // setup routes
 server.route(routes);
 
@@ -64,19 +63,21 @@ server.register(require('inert'), function (error) {
 });
 
 // setup hoodie/server
+/* NOTE: options.path.public MUST be 'dist', and the 'dist' folder
+   must exist in the root directory in order for this to work */
 server.register({
   register: hoodie,
   options: { // pass options here
     inMemory: true,
     paths: {
-      public: '.dist'
+      public: 'dist'
     }
   }
 }, function (error) {
   if (error) {
     throw error
   }
-
+  
   server.start(function (error) {
     if (error) {
       throw error
