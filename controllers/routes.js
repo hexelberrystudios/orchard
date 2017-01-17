@@ -10,7 +10,11 @@ module.exports = [
     method: 'GET',
     path: '/home',
     handler: function (request, reply) {
-      return reply.view('home');
+      if (!request.params.layout) {
+        return reply.view('home', null, { layout: 'partial_layout' });
+      } else {
+        return reply.view('home');
+      }
     }
   },
   {
