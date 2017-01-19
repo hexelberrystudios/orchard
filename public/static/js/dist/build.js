@@ -1,11 +1,5 @@
-document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>');
 var commonjsGlobal = typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
-/*  */
-
-/**
- * Convert a value to a string that is actually rendered.
- */
 function _toString (val) {
   return val == null
     ? ''
@@ -6198,14 +6192,20 @@ setTimeout(function () {
 var vue_runtime_common$1 = Vue$2;
 
 // @TODO: Update Vue.js documentation to make it clearer what the minimum requirements are for a single file component
-var PrimaryButton = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('button',{staticClass:"hxb-button",attrs:{"type":"button"}},[_vm._v(_vm._s(_vm.text))])},staticRenderFns: [],};
+var PrimaryButton = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('button',{staticClass:"hxb-button",attrs:{"type":"button"}},[_vm._v(_vm._s(_vm.text))])},staticRenderFns: [],
+  name: 'primary-button'
+};
+
+var App = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('primary-button',{attrs:{"text":"A button"}})},staticRenderFns: [],
+  name: 'app',
+  components: {
+    PrimaryButton: PrimaryButton
+  }
+};
 
 new vue_runtime_common$1({
   el: '#app',
-  components: {
-    'PrimaryButton': PrimaryButton
-  },
   // What is the "h" function? What the fuck is it? Why can't I find any documentation on it?
-  render: function (h) { return h(PrimaryButton); }
+  render: function (h) { return h(App); }
 });
 //# sourceMappingURL=build.js.map
