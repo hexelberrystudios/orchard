@@ -182,7 +182,8 @@ body, html {
   color: var(--v-light-color);
 }
 
-.hxb-button:hover {
+.hxb-button:hover,
+.hxb-button:active {
   background-color: var(--dark-color);
 }
 
@@ -240,6 +241,15 @@ body, html {
   text-decoration: none;
 }
 
+/* Links */
+a {
+  color: var(--med-color);
+}
+
+a:visited {
+  color: var(--dark-color);
+}
+
 /* Utilities */
 .hxb-u-display-block {
   display: block;
@@ -247,4 +257,8 @@ body, html {
 
 .hxb-u-txt-center {
   text-align: center;
+}
+
+.hxb-u-ml-05 {
+  margin-left: 0.5rem;
 }

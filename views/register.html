@@ -1,6 +1,6 @@
 <main>
   <h1 class="hxb-u-txt-center">Hexelberry Orchard</h1>
-  <form name="login" method="post" action="/home" class="hxb-form">
+  <form id="register_form" name="register_form" method="post" action="/home" class="hxb-form">
     <div class="hxb-form-field">
       <%- include("components/text-field", { id: "username", label: "Username", type: "text", placeholder: "Username" }) %>
     </div>
@@ -8,7 +8,7 @@
       <%- include("components/text-field", { id: "password", label: "Password", type: "password", placeholder: "Password" }) %>
     </div>
     <div class="hxb-form-field">
-      <%- include("components/submit-button", { text: "Login" }) %>
+      <%- include("components/submit-button", { text: "Register" }) %>
       <a href="/register" class"hxb-u-ml-05">or Register</a>
     </div>
   </form>
