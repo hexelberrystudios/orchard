@@ -9,6 +9,7 @@
     "browserify": "^13.3.0",
     "ejs": "^2.5.5",
     "events": "^1.1.1",
+    "fs": "0.0.1-security",
     "hapi": "^16.1.0",
     "hoodie": "^26.0.0",
     "inert": "^4.1.0",
@@ -19,7 +20,8 @@
     "pouchdb-mapreduce": "^6.1.1",
     "riot-route": "^3.0.2",
     "vision": "^4.1.1",
-    "vue": "^2.1.10"
+    "vue": "^2.1.10",
+    "vue-server-renderer": "^2.1.10"
   },
   "devDependencies": {
     "cross-env": "^3.1.4",

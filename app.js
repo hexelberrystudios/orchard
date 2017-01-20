@@ -2,6 +2,9 @@ var Hapi = require('hapi');
 var hoodie = require('hoodie').register;
 var routes = require('./controllers/routes');
 
+// Define global Vue for server-side app.js
+global.Vue = require('vue');
+
 var server = new Hapi.Server();
 
 server.connection({

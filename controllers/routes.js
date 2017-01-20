@@ -3,7 +3,14 @@ module.exports = [
     method: 'GET',
     path: '/',
     handler: function (request, reply) {
-      return reply.view('login');
+      var render = require('./render');
+      
+      render(function (html) {
+        return reply(html);
+      }, function (err) {
+        // @TODO: Send error 500 page
+        return reply(err);
+      });
     }
   },
   {

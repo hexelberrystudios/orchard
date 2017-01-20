@@ -1,8 +1,9 @@
 # orchard
 Organizer tool
 
-Run:
+start:
 
-hoodie start
+npm run dev
+node app.js
 
-Runs at http://localhost:8080/
+@TODO: Server side rendering, client side routing
