@@ -51,5 +51,6 @@ export default {
   entry: 'views/components/app.js',
   dest: 'public/static/js/dist/build.js',
   sourceMap: true,
+  format: 'iife',
   plugins
 }

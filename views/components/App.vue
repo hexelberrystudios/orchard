@@ -1,16 +1,11 @@
 <template>
-  <primary-button text="A button"></primary-button>
+  <main id="app">
+    <router-view/>
+  </main>
 </template>
 
 <script>
-  import PrimaryButton from './PrimaryButton.vue'
-  
   export default {
-    name: 'app',
-    // List the components used on this page. This is using ES2015 syntax,
-    // where PrimaryButton is the same as 'PrimaryButton': PrimaryButton
-    components: {
-      PrimaryButton
-    }
+    name: 'app'
   }
 </script>
