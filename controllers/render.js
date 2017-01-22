@@ -11,6 +11,7 @@ var render = function render (callback, errCallback) {
   //const bundleRenderer = require('vue-server-renderer').createBundleRenderer(code);
 
   // Render our Vue app to a string
+  // Router does not render correctly on server
   //bundleRenderer.renderToString(
   renderer.renderToString(
     // Create an app instance
@@ -28,6 +29,8 @@ var render = function render (callback, errCallback) {
         console.log('Responding...');
         console.log(html);
         callback(layout.replace('<!-- APP -->', html));
+        // This works
+        //callback(layout.replace('<!-- APP -->', '<main id="app"><router-view></router-view></main>'));
       }
     }
   )

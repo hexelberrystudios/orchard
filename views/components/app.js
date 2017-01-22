@@ -26,7 +26,6 @@ let createApp = function () {
       // as the argument that gets passed in when the render function is called.
       render: h => h(App)
     });
-    //}).$mount('#app');
     // -------------------
     // END NORMAL APP CODE
     // -------------------
@@ -40,4 +39,3 @@ if (typeof module !== 'undefined' && module.exports) {
   console.log('Created client app');
   createApp();
 }
-//export { createApp as default };

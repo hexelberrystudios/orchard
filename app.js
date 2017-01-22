@@ -6,17 +6,17 @@ var routes = require('./controllers/routes');
 global.Vue = require('vue');
 
 var server = new Hapi.Server();
-
+/*
 server.connection({
   host: process.env.IP,
   port: process.env.PORT
 });
-/*
+*/
 server.connection({
   host: 'localhost',
   port: 8000
 });
-*/
+
 // setup routes
 server.route(routes);
 

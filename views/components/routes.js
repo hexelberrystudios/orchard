@@ -1,6 +1,7 @@
+import Login from './Login.vue'
 const routes = [
   //{ path: '/', component: { template: '<login></login>' } }
-  { path: '/', component: { template: '<div>thing</div>' } }
+  { path: '/', component: Login }
 ];
 
 //module.exports = module.exports || {};
